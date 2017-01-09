@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  ghost:
+    image: ghost
+    env_file: .env
+    volumes:
+     - ./content:/usr/src/ghost/content
+     - ./config:/var/lib/ghost
+    ports:
+     - "2368:2368"
+    restart: always
+
+  buster:
+    image: raccoony/blog-deploy
+    links:
+      - ghost
+    depends_on:
+      - ghost
+    volumes:
+      - ~/.ssh:/root/.ssh
+    env_file: .env
+    ports:
+      - "9000:9000"
