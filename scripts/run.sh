@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-cd /deploy/static
-git init
-git remote add origin $GIT_REPO
+echo "LOGNAME: ${LOGNAME}"
+echo "EMAILL: ${EMAIL}"
+git config --global push.default simple
 git config --global user.name $LOGNAME
 git config --global user.email $EMAIL
-git pull origin master
+
+cd /deploy
+git clone $GIT_REPO static
+cd /deploy/static
+git branch --track master origin/master
 
 while :
 do
