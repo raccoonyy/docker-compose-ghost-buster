@@ -1,3 +1,4 @@
 config/
 content/
+.env
 .DS_Store
