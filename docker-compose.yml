@@ -12,7 +12,7 @@ services:
     restart: always
 
   buster:
-    image: raccoony/blog-deploy
+    image: raccoony/buster
     links:
       - ghost
     depends_on:
