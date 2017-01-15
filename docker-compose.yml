@@ -18,7 +18,8 @@ services:
     depends_on:
       - ghost
     volumes:
-      - ~/.ssh:/root/.ssh
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ~/.ssh/known_hosts:/root/.ssh/known_hosts
     env_file: .env
     environment:
       - VIRTUAL_HOST=${GITHUB_ID}.github.io
