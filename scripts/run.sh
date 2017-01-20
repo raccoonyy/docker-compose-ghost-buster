@@ -11,8 +11,4 @@ git clone $GIT_REPO static
 cd /deploy/static
 git branch --track master origin/master
 
-while :
-do
-    echo "Press [CTRL+C] to stop.."
-    sleep 1000
-done
+python -m SimpleHTTPServer 1234
