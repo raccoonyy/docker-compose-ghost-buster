@@ -1,6 +1,6 @@
 # Docker-Compose for easily run Ghost & buster
 
-### TL;DR
+## TL;DR
 
 ##### 1. Create your repository
 
@@ -20,7 +20,7 @@ $ docker-compose up -d
 
 And then, open http://127.0.0.1:2368/ghost in web browser.
 
-### How to use
+## How to use
 
 ##### 0. Create your repository
 
@@ -44,6 +44,9 @@ $ cd blog
 ```
 # .env sample
 GITHUB_ID=raccoonyy        # Github ID
+LOGNAME=raccoony           # Name
+EMAIL=raccoonyy@gmail.com  # Email
+SSH_KEY=~/.ssh/id_rsa      # Private ssh key file
 ```
 
 ##### (3.5 Copy existing ghost contents)
@@ -93,6 +96,6 @@ $ docker-compose exec buster ./deploy.sh
 $ docker-compose stop
 ```
 
-### Requirements
+## Requirements
 
 - docker, docker-compose
