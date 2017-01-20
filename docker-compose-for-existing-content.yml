@@ -1,13 +1,11 @@
 version: '2'
 
-volumes:
-  ghost_blog: {}
-
 services:
   ghost:
     image: ghost
     volumes:
-      - ghost_blog:/var/lib/ghost
+      - ./content:/usr/src/ghost/content
+      - ./config:/var/lib/ghost
     ports:
      - "2368:2368"
     restart: always
@@ -20,11 +18,13 @@ services:
       - ghost
     env_file: .env
     environment:
+      - EMAIL=raccoonyy@gmail.com
+      - LOGNAME=raccoony
       - VIRTUAL_HOST=${GITHUB_ID}.github.io
       - PUBLIC_URL=${GITHUB_ID}.github.io
       - GIT_REPO=git@github.com:${GITHUB_ID}/${GITHUB_ID}.github.com.git
     volumes:
-      - ${SSH_KEY}:/root/.ssh/id_rsa
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
       - ~/.ssh/known_hosts:/root/.ssh/known_hosts
     ports:
       - "9000:9000"

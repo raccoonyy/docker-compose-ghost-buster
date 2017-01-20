@@ -2,6 +2,12 @@
 
 ### TL;DR
 
+##### 1. Create your repository
+
+Repository name will be `YOUR_GITHUB_ID.github.io`. Details are [GitHub Pages](https://pages.github.com/).
+
+##### 2. Follow these instructions
+
 ```
 $ git clone https://github.com/raccoonyy/docker-compose-ghost-buster blog
 $ cd blog
@@ -10,9 +16,15 @@ $ docker-compose up -d
 ...
 ```
 
+##### 3. Almost done!
+
 And then, open http://127.0.0.1:2368/ghost in web browser.
 
 ### How to use
+
+##### 0. Create your repository
+
+Repository name will be `YOUR_GITHUB_ID.github.com`.
 
 ##### 1. Install Docker, Docker-Compose
 
@@ -31,10 +43,22 @@ $ cd blog
 
 ```
 # .env sample
-LOGNAME=raccoony           # Name for git commit
-EMAIL=raccoonyy@gmail.com  # Email
 GITHUB_ID=raccoonyy        # Github ID
-NODE_ENV=production
+```
+
+##### (3.5 Copy existing ghost contents)
+
+If you have already ghost contents, copy some folders to `blog`.
+
+```
+$ cp EXISTING_GHOST_content ./content
+$ cp EXISTING_GHOST_config ./config
+```
+
+And then, rename `docker-compose-for-existing-content.yml` to `docker-compose.yml`.
+
+```
+$ mv docker-compose-for-existing-content.yml docker-compose.yml
 ```
 
 ##### 4. Run
@@ -61,6 +85,12 @@ $ docker-compose exec buster ./preview.sh
 - Deploy static files to Github
 ```
 $ docker-compose exec buster ./deploy.sh
+```
+
+##### 6. Stop server
+
+```
+$ docker-compose stop
 ```
 
 ### Requirements
