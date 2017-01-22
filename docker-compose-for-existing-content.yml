@@ -20,7 +20,6 @@ services:
     environment:
       - EMAIL=raccoonyy@gmail.com
       - LOGNAME=raccoony
-      - VIRTUAL_HOST=${GITHUB_ID}.github.io
       - PUBLIC_URL=${GITHUB_ID}.github.io
       - GIT_REPO=git@github.com:${GITHUB_ID}/${GITHUB_ID}.github.com.git
     volumes:
