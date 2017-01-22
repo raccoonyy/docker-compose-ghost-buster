@@ -4,7 +4,7 @@
 
 ##### 1. Create your repository
 
-Repository name will be `YOUR_GITHUB_ID.github.io`. Details are [GitHub Pages](https://pages.github.com/).
+Repository name would be `YOUR_GITHUB_ID.github.io`. Details are [GitHub Pages](https://pages.github.com/).
 
 ##### 2. Follow these instructions
 
@@ -16,9 +16,17 @@ $ docker-compose up -d
 ...
 ```
 
-##### 3. Almost done!
+##### 3. Here is your Ghost!
 
 And then, open http://127.0.0.1:2368/ghost in web browser.
+
+##### 4. Generate static blog & preview & deploy it!
+
+```
+$ docker-compose exec buster ./generate.sh
+$ docker-compose exec buster ./preview.sh
+$ docker-compose exec buster ./deploy.sh
+```
 
 ## How to use
 
