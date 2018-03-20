@@ -6,6 +6,8 @@
 
 Repository name would be `YOUR_GITHUB_ID.github.io`. Details are [GitHub Pages](https://pages.github.com/).
 
+**Attention!** Have to checked _Initialize this repository with a README_ checkbox.
+
 ##### 2. Follow these instructions
 
 ```
@@ -33,6 +35,8 @@ $ docker-compose exec buster ./deploy.sh
 ##### 0. Create your repository
 
 Repository name will be `YOUR_GITHUB_ID.github.com`.
+
+**Attention!** Have to checked _Initialize this repository with a README_ checkbox.
 
 ##### 1. Install Docker, Docker-Compose
 
